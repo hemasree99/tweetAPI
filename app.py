@@ -33,6 +33,7 @@ def get_tweet(tweet_id):
         if tweet.get('id') == tweet_id:
             return jsonify(tweet)
     return jsonify({'error': 'Tweet not found'}), 404
+@app.route('/tweet', methods=['POST'])
 def create_tweet():
     try:
         # Retrieve data from the request
